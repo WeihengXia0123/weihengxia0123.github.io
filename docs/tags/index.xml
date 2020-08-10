@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hugo tranquilpeak theme</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on Hugo tranquilpeak theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jun 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>disqus</title>
+      <link>https://example.org/tags/disqus/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/tags/disqus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google analytics</title>
+      <link>https://example.org/tags/google-analytics/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/tags/google-analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gravatar</title>
+      <link>https://example.org/tags/gravatar/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/tags/gravatar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo theme</title>
+      <link>https://example.org/tags/hexo-theme/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/tags/hexo-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>responsive</title>
+      <link>https://example.org/tags/responsive/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/tags/responsive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
