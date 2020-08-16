@@ -2,13 +2,12 @@
 title: "Udacity Pytorch Notes"
 date: 2020-08-16T13:27:58+02:00
 categories:
-- category
-- subcategory
+- PyTorch
 tags:
-- tag1
-- tag2
+- PyTorch
+- Machine Learning
 keywords:
-- tech
+- Machine Learning
 thumbnailImage: img/udacity.png
 ---
 
