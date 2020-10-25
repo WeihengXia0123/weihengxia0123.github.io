@@ -6,10 +6,19 @@
     <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2020 13:27:58 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2020 16:08:06 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Docker</title>
+      <link>https://weihengxia0123.github.io/2020/10/learning-docker/</link>
+      <pubDate>Sun, 25 Oct 2020 16:08:06 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/10/learning-docker/</guid>
+      <description> To kill a docker container: docker kill [docker-container-ID]  </description>
+    </item>
     
     <item>
       <title>Udacity Pytorch Notes</title>
