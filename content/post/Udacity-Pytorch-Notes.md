@@ -8,7 +8,7 @@ tags:
 - Machine Learning
 keywords:
 - Machine Learning
-thumbnailImage: img/udacity.png
+thumbnailImage: img/PyTorch.png
 ---
 
 <!--more-->

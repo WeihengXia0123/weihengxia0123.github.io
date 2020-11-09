@@ -18,7 +18,7 @@ publishDir = "docs"
 defaultContentLanguage = "en-us"
 title = "Weiheng's Blog"
 theme = "tranq"
-disqusShortname = "hugo-tranquilpeak-theme"
+disqusShortname = "Weiheng Blog"
 # googleAnalytics = "UA-123-45"
 paginate = 7
 canonifyurls = true
@@ -33,14 +33,14 @@ canonifyurls = true
 
 [author]
   name = "Weiheng Xia"
-  bio = "Change the world with robots"
-  job = "Master Student"
-  location = "Germany/France"
+  bio = "AI & Cloud | Robotics"
+  job = "Master Student at TU Berlin and EURECOM"
+  location = "Antibes, France"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   #gravatarEmail = "weiheng.xia@gmail.com"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg"
+  picture = "https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg"
   # Your Twitter username without the @. E.g : thibaudlepretre
   # twitter = "thibaudlepretre"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
@@ -159,7 +159,7 @@ canonifyurls = true
   autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "img/ink.jpeg"
+  favicon = "https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg"
 
   # Header configuration
   # The link at the right of the header is customizable

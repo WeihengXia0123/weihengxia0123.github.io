@@ -12,7 +12,8 @@ keywords:
 thumbnailImagePosition: bottom
 thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_icon_ytjd7s.jpg
 autoThumbnailImage: yes
-coverSize: false
+
+coverSize: full
 coverImage: img/plane_sky.jpg
 ---
 
