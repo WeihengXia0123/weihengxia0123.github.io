@@ -159,7 +159,7 @@ canonifyurls = true
   autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
-  # favicon = "/favicon.png"
+  favicon = "img/ink.jpeg"
 
   # Header configuration
   # The link at the right of the header is customizable
