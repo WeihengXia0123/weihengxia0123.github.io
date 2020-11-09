@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 16:08:06 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2020 21:27:01 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backpropagation</title>
+      <link>https://weihengxia0123.github.io/2020/11/backpropagation/</link>
+      <pubDate>Mon, 09 Nov 2020 21:27:01 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/11/backpropagation/</guid>
+      <description>Let&amp;rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
+ ![avatar](img/Backpropagation formula_marked.jpg)  During my implementation, I found that it&amp;rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&amp;rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)</description>
+    </item>
     
     <item>
       <title>Learning Docker</title>
