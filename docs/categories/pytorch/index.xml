@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PyTorch on Hugo tranquilpeak theme</title>
+    <title>PyTorch on Weiheng&#39;s Blog</title>
     <link>https://weihengxia0123.github.io/categories/pytorch/</link>
-    <description>Recent content in PyTorch on Hugo tranquilpeak theme</description>
+    <description>Recent content in PyTorch on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Aug 2020 13:27:58 +0200</lastBuildDate>

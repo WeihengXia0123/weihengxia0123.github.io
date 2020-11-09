@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Weiheng&#39;s Blog</title>
-    <link>https://weihengxia0123.github.io/tags/machine-learning/</link>
+    <link>https://weihengxia0123.github.io/categories/machine-learning/</link>
     <description>Recent content in Machine Learning on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Nov 2020 21:27:01 +0100</lastBuildDate>
     
-	<atom:link href="https://weihengxia0123.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://weihengxia0123.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/</guid>
       <description>Let&amp;rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
 During my implementation, I found that it&amp;rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&amp;rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)</description>
-    </item>
-    
-    <item>
-      <title>Udacity Pytorch Notes</title>
-      <link>https://weihengxia0123.github.io/2020/08/udacity-pytorch-notes/</link>
-      <pubDate>Sun, 16 Aug 2020 13:27:58 +0200</pubDate>
-      
-      <guid>https://weihengxia0123.github.io/2020/08/udacity-pytorch-notes/</guid>
-      <description></description>
     </item>
     
   </channel>

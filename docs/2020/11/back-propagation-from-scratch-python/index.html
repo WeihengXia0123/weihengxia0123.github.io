@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Weiheng Xia">
+<meta name="keywords" content="Backpropagation, Machine Learning">
+<meta name="description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
+During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+
+
+<meta property="og:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
+During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Back-propagation from scratch (Python)">
+<meta name="twitter:title" content="Back-propagation from scratch (Python)">
+<meta property="og:url" content="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+<meta property="og:site_name" content="Weiheng&#39;s Blog">
+<meta property="og:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
+During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta name="twitter:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
+During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-11-09T21:27:01">
+  
+  
+    <meta property="article:modified_time" content="2020-11-09T21:27:01">
+  
+  
+  
+    
+      <meta property="article:section" content="Machine Learning">
+    
+  
+  
+    
+      <meta property="article:tag" content="Machine Learning">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_icon_ytjd7s.jpg">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_icon_ytjd7s.jpg">
+
+
+  <meta property="og:image" content="https://weihengxia0123.github.io/img/plane_sky.jpg">
+  <meta property="twitter:image" content="https://weihengxia0123.github.io/img/plane_sky.jpg">
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg">
+
+
+    <title>Back-propagation from scratch (Python)</title>
+
+    <link rel="icon" href="https://weihengxia0123.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://weihengxia0123.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://weihengxia0123.github.io/">Weiheng&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://weihengxia0123.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://weihengxia0123.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Weiheng Xia</h4>
+        
+          <h5 class="sidebar-profile-bio">Change the world with robots</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/weihengxia0123" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/weihengxia/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">Linkedin</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('/img/plane_sky.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Back-propagation from scratch (Python)
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-11-09T21:27:01&#43;01:00">
+        
+  November 9, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/machine-learning">Machine Learning</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="lets-start-from-the-formula">Let&rsquo;s start from the Formula</h2>
+<p>The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:</p>
+<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604958154/backpropagation/Backpropagation_formula_marked_s7xhpl.jpg" alt="formula"></p>
+<p>During my implementation, I found that it&rsquo;s super <strong>important</strong> to know the <strong>shape</strong> (or size) of each <code>W</code>, <code>b</code>, and <code>error (delta)</code> ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)</p>
+<p>The below summary of equations from Michael A. Nielsen[1] is very simple and useful, with only 4 main equations in back-propagation.</p>
+<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_summary_vxi44b.png" alt="summary"></p>
+<p>Reference:</p>
+<p>[1] Michael A. Nielsen, &ldquo;Neural Networks and Deep Learning&rdquo;, Determination Press, 2015. <a href="http://neuralnetworksanddeeplearning.com/chap2.html">URL</a></p>
+<h2 id="lets-get-our-hand-dirty-code">Let&rsquo;s get our hand dirty! (code)</h2>
+<p>Firstly, we want to construct a class for MLP, as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MLP</span>(Layer): <span style="color:#75715e"># Multi Layer Perceptron</span>
+    <span style="color:#66d9ef">def</span> __init__(self, neurons_per_layer):
+        <span style="color:#e6db74">&#39;&#39;&#39; SHAPE of each variable
+</span><span style="color:#e6db74">        W - n(i+1) x n(i), which means the shape of W is the number of neurons in layer(i+1) x number of neurons in layer(i)
+</span><span style="color:#e6db74">        b - 1 x n(i+1)
+</span><span style="color:#e6db74">        a - 1 x n(i+1)
+</span><span style="color:#e6db74">        z - 1 x n(i+1)
+</span><span style="color:#e6db74">        d_W - n(i+1) x n(i) (same with W, think for why)
+</span><span style="color:#e6db74">        d_b - 1 x n(i+1)
+</span><span style="color:#e6db74">        d_a - 1 x n(i+1)
+</span><span style="color:#e6db74">        d_z - 1 x n(i+1)
+</span><span style="color:#e6db74">        &#39;&#39;&#39;</span>
+        
+        super()<span style="color:#f92672">.</span>__init__()
+        
+        self<span style="color:#f92672">.</span>layer<span style="color:#f92672">=</span>{}
+        
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(neurons_per_layer)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">=</span>Layer()
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>W<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">**</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>],neurons_per_layer[i])
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>b<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>a<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])) 
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_W<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>],neurons_per_layer[i]))
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_b<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])) 
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_a<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_z<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">1</span>,neurons_per_layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+
+        self<span style="color:#f92672">.</span>losses<span style="color:#f92672">=</span>[]
+        self<span style="color:#f92672">.</span>accuracies<span style="color:#f92672">=</span>[]
+</code></pre></div><p>Secondly, we need a sigmoid and derivative of sigmoid function for later use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sigmoid</span>(a):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(logistic<span style="color:#f92672">.</span>cdf(a)) 
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">d_sigmoid</span>(a):
+    <span style="color:#66d9ef">return</span> MLP<span style="color:#f92672">.</span>sigmoid(a)<span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>MLP<span style="color:#f92672">.</span>sigmoid(a))
+</code></pre></div><p>Thirdly, we implement the forward-propagation:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x) :
+    <span style="color:#66d9ef">if</span> x<span style="color:#f92672">.</span>ndim <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+        <span style="color:#75715e"># if input is 1D, we reshape it to D_input x N, where N is the number of samples in one batch.</span>
+        <span style="color:#75715e"># For example, if you want to train more than 1 sample in one time, the input size can be N=1000</span>
+        x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>reshape(x<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>],<span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#75715e"># if input is 2D, we also reshape it D_input x N</span>
+        x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>T
+        
+    num_layer <span style="color:#f92672">=</span> len(self<span style="color:#f92672">.</span>layer<span style="color:#f92672">.</span>keys())
+    
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num_layer):
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">            - W: n(0) x n(input)
+</span><span style="color:#e6db74">            - x: n(input) x N
+</span><span style="color:#e6db74">            - b: 1 x n(0)
+</span><span style="color:#e6db74">            &#39;&#39;&#39;</span>
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z <span style="color:#f92672">=</span> (self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>W) <span style="color:#960050;background-color:#1e0010">@</span> x <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>b<span style="color:#f92672">.</span>T
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">            - W: n(i) x n(i-1)
+</span><span style="color:#e6db74">            - a: n(i-1) x N
+</span><span style="color:#e6db74">            - b: 1 x n(0)
+</span><span style="color:#e6db74">            - z: n(i) x N
+</span><span style="color:#e6db74">            &#39;&#39;&#39;</span>
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>W <span style="color:#960050;background-color:#1e0010">@</span> self<span style="color:#f92672">.</span>layer[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>a <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>b<span style="color:#f92672">.</span>T
+        self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>a <span style="color:#f92672">=</span> MLP<span style="color:#f92672">.</span>sigmoid(self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z)
+    
+    y_hat <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer[num_layer<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>a<span style="color:#f92672">.</span>T
+
+    <span style="color:#66d9ef">return</span> y_hat
+</code></pre></div><p>Fourthly, we need to calculate MSE loss and accuracy:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">loss</span>(y_hat, y) :
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    - y_hat : NxC
+</span><span style="color:#e6db74">    - y : NxC
+</span><span style="color:#e6db74">    - L : MSE loss
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    
+    L <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean((y_hat <span style="color:#f92672">-</span> y)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+    
+    <span style="color:#66d9ef">return</span> L
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accuracy</span>(y_hat,y) :
+    n<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+    y_hat_chosen <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(y_hat<span style="color:#f92672">.</span>shape)
+    
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(y<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]):    
+        argmax <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(y_hat[i])
+        y_hat_chosen[i][argmax] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        
+        <span style="color:#66d9ef">if</span> (y_hat_chosen[i] <span style="color:#f92672">==</span> y[i])<span style="color:#f92672">.</span>all():
+            n <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    
+    acc <span style="color:#f92672">=</span> float(n<span style="color:#f92672">/</span>y<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])
+
+    <span style="color:#66d9ef">return</span> acc
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">backpropagation</span>(self,x,y,y_hat,learning_rate) :
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    - deltas[i]: 1 x [this_layer]  (N=1 is the number of samples, and D_0 is the number of neurons in hidden layer 1)
+</span><span style="color:#e6db74">    - d_W: same with W, [this_layer] x [previous_layer]
+</span><span style="color:#e6db74">    - x: 1 x [input_layer] (N=1 is the number of samples)
+</span><span style="color:#e6db74">    - a: [this_layer] x 1 (N=1 is the number of samples)
+</span><span style="color:#e6db74">    - y, y_hat: 1 x C
+</span><span style="color:#e6db74">    - z: [this_layer] x 1
+</span><span style="color:#e6db74">    - d_b: 1 x [this_layer]
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    
+    deltas <span style="color:#f92672">=</span> {}
+    num_layer <span style="color:#f92672">=</span> len(self<span style="color:#f92672">.</span>layer<span style="color:#f92672">.</span>keys())
+    
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(num_layer)):
+        <span style="color:#75715e"># step1: compute error: delta</span>
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> num_layer<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+            deltas[i] <span style="color:#f92672">=</span> (y_hat <span style="color:#f92672">-</span> y) <span style="color:#f92672">*</span> MLP<span style="color:#f92672">.</span>d_sigmoid(self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z)<span style="color:#f92672">.</span>T
+        <span style="color:#66d9ef">else</span>:
+            deltas[i] <span style="color:#f92672">=</span> deltas[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#960050;background-color:#1e0010">@</span> self<span style="color:#f92672">.</span>layer[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>W <span style="color:#f92672">*</span> MLP<span style="color:#f92672">.</span>d_sigmoid(self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>z)<span style="color:#f92672">.</span>T
+
+        <span style="color:#75715e"># step2: compute d_b</span>
+        self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_b <span style="color:#f92672">=</span> deltas[i]
+        
+        <span style="color:#75715e"># step3: compute d_W</span>
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_W <span style="color:#f92672">=</span> deltas[i]<span style="color:#f92672">.</span>T <span style="color:#f92672">*</span> x
+        <span style="color:#66d9ef">else</span>:
+            self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_W <span style="color:#f92672">=</span> deltas[i]<span style="color:#f92672">.</span>T <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>layer[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>a<span style="color:#f92672">.</span>T
+    
+
+	<span style="color:#75715e"># update gradients</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num_layer):
+        self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>W <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>W <span style="color:#f92672">-</span> learning_rate<span style="color:#f92672">*</span>self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_W
+        self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>b <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>b <span style="color:#f92672">-</span> learning_rate<span style="color:#f92672">*</span>self<span style="color:#f92672">.</span>layer[i]<span style="color:#f92672">.</span>d_b
+</code></pre></div><hr>
+<blockquote>
+<p><strong>CONGRATUALTIONS!!</strong></p>
+</blockquote>
+<p>We finished the MLP structure by Python with just these few blocks!</p>
+<p>Now it&rsquo;s your time to try it out by implementing your own training function, which calls the <code>MLP()</code> class to utilize its forward and backward-propagation functions in your own code!</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/machine-learning/">Machine Learning</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/10/learning-docker/" data-tooltip="Learning Docker">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Weiheng Xia. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/10/learning-docker/" data-tooltip="Learning Docker">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Fback-propagation-from-scratch-python%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Fback-propagation-from-scratch-python%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Fback-propagation-from-scratch-python%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Weiheng Xia</h4>
+    
+      <div id="about-card-bio">Change the world with robots</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Master Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Germany/France
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://weihengxia0123.github.io/img/Blurred_Blue.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://weihengxia0123.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/11\/back-propagation-from-scratch-python\/';
+          
+            this.page.identifier = '\/2020\/11\/back-propagation-from-scratch-python\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
