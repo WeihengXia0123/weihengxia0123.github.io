@@ -1,7 +1,14 @@
 ---
 title: "Back-propagation from scratch (Python)"
 date: 2020-11-09T21:27:01+01:00
-draft: true
+categories:
+- Machine Learning
+tags:
+- Machine Learning
+keywords:
+- Backpropagation
+- Machine Learning
+
 thumbnailImagePosition: bottom
 thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_icon_ytjd7s.jpg
 autoThumbnailImage: yes
