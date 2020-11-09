@@ -16,7 +16,7 @@ baseURL = "https://weihengxia0123.github.io/"
 languageCode = "en-us"
 publishDir = "docs"
 defaultContentLanguage = "en-us"
-title = "Hugo tranquilpeak theme"
+title = "Weiheng's Blog"
 theme = "tranq"
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
@@ -119,7 +119,7 @@ canonifyurls = true
   # If false it will flat categories.
   hierarchicalCategories = true
 
-  description = "Hugo tranquilpeak theme blog"
+  description = "Weiheng's Blog"
 
   # Customization
   # Define the behavior of the sidebar

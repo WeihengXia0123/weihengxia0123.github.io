@@ -1,14 +1,19 @@
 ---
-title: "Backpropagation"
+title: "Back-propagation from scratch (Python)"
 date: 2020-11-09T21:27:01+01:00
 draft: true
+thumbnailImagePosition: bottom
+thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_icon_ytjd7s.jpg
+autoThumbnailImage: yes
+coverSize: false
+coverImage: img/plane_sky.jpg
 ---
 
 ## Let's start from the Formula
 
 The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
 
-- ![avatar](img/Backpropagation formula_marked.jpg)
+![formula](https://res.cloudinary.com/dr5l034cf/image/upload/v1604958154/backpropagation/Backpropagation_formula_marked_s7xhpl.jpg)
 
 During my implementation, I found that it's super **important** to know the **shape** (or size) of each `W`, `b`, and `error (delta)` ! Otherwise, it would take you ages to debug and print every variable's shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)
 
@@ -16,7 +21,7 @@ During my implementation, I found that it's super **important** to know the **sh
 
 The below summary of equations from Michael A. Nielsen[1] is very simple and useful, with only 4 main equations in back-propagation.
 
-![avatar](img/backprop_summary.png)
+![summary](https://res.cloudinary.com/dr5l034cf/image/upload/v1604958146/backpropagation/backprop_summary_vxi44b.png)
 
 
 
