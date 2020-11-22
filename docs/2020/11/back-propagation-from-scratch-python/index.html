@@ -8,22 +8,18 @@
 <meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Weiheng Xia">
 <meta name="keywords" content="Backpropagation, Machine Learning">
-<meta name="description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
-During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta name="description" content="This tutorial will teach you to write a backpropagation code from scrach.">
 
 
-<meta property="og:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
-During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta property="og:description" content="This tutorial will teach you to write a backpropagation code from scrach.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Back-propagation from scratch (Python)">
 <meta name="twitter:title" content="Back-propagation from scratch (Python)">
 <meta property="og:url" content="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
 <meta property="twitter:url" content="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/">
 <meta property="og:site_name" content="Weiheng&#39;s Blog">
-<meta property="og:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
-During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
-<meta name="twitter:description" content="Let&rsquo;s start from the Formula The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
-During my implementation, I found that it&rsquo;s super important to know the shape (or size) of each W, b, and error (delta) ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)">
+<meta property="og:description" content="This tutorial will teach you to write a backpropagation code from scrach.">
+<meta name="twitter:description" content="This tutorial will teach you to write a backpropagation code from scrach.">
 <meta property="og:locale" content="en-us">
 
   
@@ -269,7 +265,8 @@ During my implementation, I found that it&rsquo;s super important to know the sh
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h2 id="lets-start-from-the-formula">Let&rsquo;s start from the Formula</h2>
+              <p>This tutorial will teach you to write a backpropagation code from scrach.</p>
+<h2 id="lets-start-from-the-formula">Let&rsquo;s start from the Formula</h2>
 <p>The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:</p>
 <p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604958154/backpropagation/Backpropagation_formula_marked_s7xhpl.jpg" alt="formula"></p>
 <p>During my implementation, I found that it&rsquo;s super <strong>important</strong> to know the <strong>shape</strong> (or size) of each <code>W</code>, <code>b</code>, and <code>error (delta)</code> ! Otherwise, it would take you ages to debug and print every variable&rsquo;s shape. Believe me, it sounds very troublesome to write down the size before implementing, but you will find it quite handy later;)</p>
@@ -416,7 +413,6 @@ During my implementation, I found that it&rsquo;s super important to know the sh
 </blockquote>
 <p>We finished the MLP structure by Python with just these few blocks!</p>
 <p>Now it&rsquo;s your time to try it out by implementing your own training function, which calls the <code>MLP()</code> class to utilize its forward and backward-propagation functions in your own code!</p>
-
               
             </div>
           </div>
@@ -441,7 +437,7 @@ During my implementation, I found that it&rsquo;s super important to know the sh
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/linux-sed/" data-tooltip="Linux Sed">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -527,7 +523,7 @@ During my implementation, I found that it&rsquo;s super important to know the sh
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/linux-sed/" data-tooltip="Linux Sed">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

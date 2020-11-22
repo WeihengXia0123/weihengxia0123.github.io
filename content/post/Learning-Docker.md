@@ -11,5 +11,11 @@ coverImage: img/docker.png
 draft: false
 ---
 
-1. To kill a docker container:
-`docker kill [docker-container-ID]`
+Basic docker usages and my notes when learning docker.
+<!--more-->
+
+## Baic commands:
+   1. Show containers: `docker container ls (options: [-a])` / `docker ps -a`
+   2. To kill a docker container: `docker kill [docker-container-ID]`
+   3. To remove a docker image: `docekr image rm [image-ID]`
+

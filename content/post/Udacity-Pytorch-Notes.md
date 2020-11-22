@@ -10,7 +10,7 @@ keywords:
 - Machine Learning
 thumbnailImage: img/PyTorch.png
 ---
-
+PyTorch notes from Udacity Deep Learning course.
 <!--more-->
 ### manual_seed() 用法
 ```python

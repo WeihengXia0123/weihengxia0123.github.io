@@ -17,6 +17,9 @@ coverSize: full
 coverImage: img/plane_sky.jpg
 ---
 
+This tutorial will teach you to write a backpropagation code from scrach.
+<!--more-->
+
 ## Let's start from the Formula
 
 The first thing to implement an algorithm is to understand its mathematics, so I wrote it step by step here:
