@@ -6,15 +6,20 @@
     <description>Recent content in Tags on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2020 21:27:01 +0100</lastBuildDate>
-    
-	<atom:link href="https://weihengxia0123.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 25 Nov 2020 12:53:09 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jupyterlab</title>
+      <link>https://weihengxia0123.github.io/tags/jupyterlab/</link>
+      <pubDate>Wed, 25 Nov 2020 12:53:09 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/jupyterlab/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Machine Learning</title>
       <link>https://weihengxia0123.github.io/tags/machine-learning/</link>
-      <pubDate>Mon, 09 Nov 2020 21:27:01 +0100</pubDate>
+      <pubDate>Wed, 25 Nov 2020 12:53:09 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/tags/machine-learning/</guid>
       <description></description>

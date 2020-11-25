@@ -3,42 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://weihengxia0123.github.io/categories/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/tags/jupyterlab/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/2020/11/jupyterlab-tensorboard-500-internal-server-error/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/tags/machine-learning/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/categories/machine-learning/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/post/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/tags/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/</loc>
+    <lastmod>2020-11-25T12:53:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://weihengxia0123.github.io/2020/11/beers/</loc>
+    <lastmod>2020-11-23T22:43:53+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://weihengxia0123.github.io/2020/11/linux-sed/</loc>
     <lastmod>2020-11-22T23:54:54+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://weihengxia0123.github.io/post/</loc>
-    <lastmod>2020-11-22T23:54:54+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://weihengxia0123.github.io/</loc>
-    <lastmod>2020-11-22T23:54:54+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/</loc>
-    <lastmod>2020-11-09T21:27:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://weihengxia0123.github.io/categories/</loc>
-    <lastmod>2020-11-09T21:27:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://weihengxia0123.github.io/tags/machine-learning/</loc>
-    <lastmod>2020-11-09T21:27:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://weihengxia0123.github.io/categories/machine-learning/</loc>
-    <lastmod>2020-11-09T21:27:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://weihengxia0123.github.io/tags/</loc>
     <lastmod>2020-11-09T21:27:01+01:00</lastmod>
   </url>
   
