@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2020 12:53:09 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>robotics</title>
+      <link>https://weihengxia0123.github.io/tags/robotics/</link>
+      <pubDate>Sun, 29 Nov 2020 23:42:23 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Jupyterlab</title>
       <link>https://weihengxia0123.github.io/tags/jupyterlab/</link>
@@ -22,6 +31,60 @@
       <pubDate>Wed, 25 Nov 2020 12:53:09 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beer</title>
+      <link>https://weihengxia0123.github.io/tags/beer/</link>
+      <pubDate>Mon, 23 Nov 2020 22:43:53 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/beer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>food</title>
+      <link>https://weihengxia0123.github.io/tags/food/</link>
+      <pubDate>Mon, 23 Nov 2020 22:43:53 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/food/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://weihengxia0123.github.io/tags/linux/</link>
+      <pubDate>Sun, 22 Nov 2020 23:54:54 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>https://weihengxia0123.github.io/tags/sed/</link>
+      <pubDate>Sun, 22 Nov 2020 23:54:54 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>https://weihengxia0123.github.io/tags/cloud/</link>
+      <pubDate>Sun, 25 Oct 2020 16:08:06 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://weihengxia0123.github.io/tags/docker/</link>
+      <pubDate>Sun, 25 Oct 2020 16:08:06 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/tags/docker/</guid>
       <description></description>
     </item>
     

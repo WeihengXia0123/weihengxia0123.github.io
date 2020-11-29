@@ -2,6 +2,13 @@
 title: "Linux Sed"
 date: 2020-11-22T23:54:54+01:00
 draft: false
+
+categories:
+- Linux
+tags:
+- linux
+- sed
+
 ---
 Basic linux sed commands to search, replace, and add strings in files.
 <!--more-->

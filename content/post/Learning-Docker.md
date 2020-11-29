@@ -5,6 +5,12 @@ thumbnailImagePosition: bottom
 thumbnailImage: img/docker_2.png
 autoThumbnailImage: yes
 
+categories:
+- Cloud
+tags:
+- cloud
+- docker
+
 coverSize: full
 coverImage: img/docker.png
 

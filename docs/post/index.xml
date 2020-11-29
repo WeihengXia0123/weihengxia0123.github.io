@@ -6,7 +6,43 @@
     <description>Recent content in Posts on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2020 12:53:09 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robotics 4 Motion Planning</title>
+      <link>https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/</link>
+      <pubDate>Sun, 29 Nov 2020 23:42:23 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/</guid>
+      <description>&lt;p&gt;In this blog, we are going to explore RRT (Rapidly-exploring random tree) algorihtm for motion planning.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Robotics 3 Visual Servoing</title>
+      <link>https://weihengxia0123.github.io/2020/11/robotics-3-visual-servoing/</link>
+      <pubDate>Sun, 29 Nov 2020 21:15:23 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/11/robotics-3-visual-servoing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robotics 2 Jacobian Torque and Control</title>
+      <link>https://weihengxia0123.github.io/2020/11/robotics-2-jacobian-torque-and-control/</link>
+      <pubDate>Sun, 29 Nov 2020 20:15:23 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/11/robotics-2-jacobian-torque-and-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robotics 1 Kinematics and Dynamics</title>
+      <link>https://weihengxia0123.github.io/2020/11/robotics-1-kinematics-and-dynamics/</link>
+      <pubDate>Sun, 29 Nov 2020 15:10:18 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/11/robotics-1-kinematics-and-dynamics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Jupyterlab Tensorboard 500 Internal Server Error</title>
       <link>https://weihengxia0123.github.io/2020/11/jupyterlab-tensorboard-500-internal-server-error/</link>

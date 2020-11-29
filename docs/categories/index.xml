@@ -6,13 +6,49 @@
     <description>Recent content in Categories on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2020 12:53:09 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>robotics</title>
+      <link>https://weihengxia0123.github.io/categories/robotics/</link>
+      <pubDate>Sun, 29 Nov 2020 23:42:23 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/robotics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Machine Learning</title>
       <link>https://weihengxia0123.github.io/categories/machine-learning/</link>
       <pubDate>Wed, 25 Nov 2020 12:53:09 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Food</title>
+      <link>https://weihengxia0123.github.io/categories/food/</link>
+      <pubDate>Mon, 23 Nov 2020 22:43:53 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/food/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://weihengxia0123.github.io/categories/linux/</link>
+      <pubDate>Sun, 22 Nov 2020 23:54:54 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://weihengxia0123.github.io/categories/cloud/</link>
+      <pubDate>Sun, 25 Oct 2020 16:08:06 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/cloud/</guid>
       <description></description>
     </item>
     
