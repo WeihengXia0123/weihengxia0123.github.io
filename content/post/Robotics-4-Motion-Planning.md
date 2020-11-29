@@ -12,16 +12,18 @@ thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_400/
 ---
 In this blog, we are going to explore RRT (Rapidly-exploring random tree) algorihtm for motion planning.	
 <!--more-->
-### RRT Pseudo Code
+{{<table_of_contents>}}
+
+## RRT Pseudo Code
 ![](https://res.cloudinary.com/dr5l034cf/image/upload/v1606690249/Robotics/motion-planning-pseudo_yhrbow.jpg)
 
-### RRT variants
+## RRT variants
 ![](https://res.cloudinary.com/dr5l034cf/image/upload/v1606690397/Robotics/RRT-family_zae9gs.jpg)
 
-### RRT with PUMA robot simulation
+## RRT with PUMA robot simulation
 ![](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_600/v1606689979/Robotics/motion-planning_fwwg9u.jpg)
 
 ![](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_600/v1606690120/Robotics/motion-planning-finish_y6eosj.jpg)
 
-### Result table
+## Result table
 ![](https://res.cloudinary.com/dr5l034cf/image/upload/v1606690527/Robotics/motion-planning-result_re9a5b.jpg)
