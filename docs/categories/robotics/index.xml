@@ -6,7 +6,11 @@
     <description>Recent content in robotics on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/categories/robotics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate>
+    
+	<atom:link href="https://weihengxia0123.github.io/categories/robotics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Robotics 4 Motion Planning</title>
       <link>https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/</link>

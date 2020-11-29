@@ -6,7 +6,11 @@
     <description>Recent content in food on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2020 22:43:53 +0100</lastBuildDate><atom:link href="https://weihengxia0123.github.io/tags/food/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Nov 2020 22:43:53 +0100</lastBuildDate>
+    
+	<atom:link href="https://weihengxia0123.github.io/tags/food/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Beers!</title>
       <link>https://weihengxia0123.github.io/2020/11/beers/</link>
