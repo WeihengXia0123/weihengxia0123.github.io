@@ -16,17 +16,35 @@ thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/
 This is the first question when I heard of these 3 terms. They all frequently appear in Robotics books and sometimes appear together.\
 \
  Let's first understand their definitions from Webster:
+
+{{< hl-text warning >}}
 - Kinematics: branch of dynamics that deals with aspects of
 motion **apart from considerations of mass and force**
+{{< /hl-text >}}
+.
+
+{{< hl-text warning >}}
 - Dynamics: branch of mechanics that **deals with forces** and
 their **relation primarily to the motion** but sometimes also
 to the equilibrium of bodies
+{{< /hl-text >}}
+.
+
+{{< hl-text warning >}}
 - Mechanics: branch of physical science that deals with
-**energy and forces and their effect on bodies**
+energy and forces and their effect on bodies
+{{< /hl-text >}}
+.
+
+
+
 
 ## Forward vs Inverse Kinematics
-- Forward: Where is the end-effector based on a given configuration?
-- Inverse: Where do the joints have to be to place the end-effector?
+{{< alert info>}} 
+1. Forward: Where is the end-effector based on a given configuration?
+2. Inverse: Where do the joints have to be to place the end-effector? 
+{{< /alert >}}
+
 
 ## End Effector Pose (operational space)
 ![EE](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_104/v1606677467/Robotics/EE_pose_y0hjns.png)
