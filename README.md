@@ -1,2 +1,2 @@
 # Blog for Weiheng Xia
-Link: [weiheng.tech](weiheng.tech)
+Link: [weiheng.tech](https://weiheng.tech)
