@@ -1,5 +1,5 @@
 ---
-title: "Udacity Pytorch Notes"
+title: "Pytorch Notes"
 date: 2020-08-16T13:27:58+02:00
 categories:
 - PyTorch
@@ -10,8 +10,15 @@ keywords:
 - Machine Learning
 thumbnailImage: img/PyTorch.png
 ---
-PyTorch notes from Udacity Deep Learning course.
+PyTorch notes
 <!--more-->
+### concatenate Tensor
+```python
+new_tensor = torch.cat((images_gray, images_gray, images_gray), 1)
+
+--------->  new_tensor:  torch.Size([1, 3, 32, 32])
+```
+
 ### manual_seed() 用法
 ```python
 torch.manual_seed(100) 

@@ -7,38 +7,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Weiheng Xia">
-<meta name="keywords" content="">
-<meta name="description" content="Basic docker usages and my notes when learning docker.">
+<meta name="keywords" content="Machine Learning">
+<meta name="description" content="PyTorch notes">
 
 
-<meta property="og:description" content="Basic docker usages and my notes when learning docker.">
+<meta property="og:description" content="PyTorch notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Learning Docker">
-<meta name="twitter:title" content="Learning Docker">
-<meta property="og:url" content="https://weihengxia0123.github.io/2020/10/learning-docker/">
-<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/10/learning-docker/">
+<meta property="og:title" content="Pytorch Notes">
+<meta name="twitter:title" content="Pytorch Notes">
+<meta property="og:url" content="https://weihengxia0123.github.io/2020/08/pytorch-notes/">
+<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/08/pytorch-notes/">
 <meta property="og:site_name" content="Weiheng&#39;s Blog">
-<meta property="og:description" content="Basic docker usages and my notes when learning docker.">
-<meta name="twitter:description" content="Basic docker usages and my notes when learning docker.">
+<meta property="og:description" content="PyTorch notes">
+<meta name="twitter:description" content="PyTorch notes">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-10-25T16:08:06">
+    <meta property="article:published_time" content="2020-08-16T13:27:58">
   
   
-    <meta property="article:modified_time" content="2020-10-25T16:08:06">
+    <meta property="article:modified_time" content="2020-08-16T13:27:58">
   
-  
-  
-    
-      <meta property="article:section" content="Cloud">
-    
   
   
     
-      <meta property="article:tag" content="cloud">
+      <meta property="article:section" content="PyTorch">
     
-      <meta property="article:tag" content="docker">
+  
+  
+    
+      <meta property="article:tag" content="PyTorch">
+    
+      <meta property="article:tag" content="Machine Learning">
     
   
 
@@ -51,12 +51,9 @@
 
 
 
-  <meta property="og:image" content="https://weihengxia0123.github.io/img/docker_2.png">
-  <meta property="twitter:image" content="https://weihengxia0123.github.io/img/docker_2.png">
+  <meta property="og:image" content="https://weihengxia0123.github.io/img/PyTorch.png">
+  <meta property="twitter:image" content="https://weihengxia0123.github.io/img/PyTorch.png">
 
-
-  <meta property="og:image" content="https://weihengxia0123.github.io/img/docker.png">
-  <meta property="twitter:image" content="https://weihengxia0123.github.io/img/docker.png">
 
 
 
@@ -65,14 +62,14 @@
   <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg">
 
 
-    <title>Learning Docker</title>
+    <title>Pytorch Notes</title>
 
     <link rel="icon" href="https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg">
     
 
     
 
-    <link rel="canonical" href="https://weihengxia0123.github.io/2020/10/learning-docker/">
+    <link rel="canonical" href="https://weihengxia0123.github.io/2020/08/pytorch-notes/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -221,24 +218,26 @@
 </nav>
 
       
-  <div class="post-header-cover
-              text-left
-              post-header-cover--full"
-       style="background-image:url('/img/docker.png')"
-       data-behavior="4">
-    
-      <div class="post-header main-content-wrap text-left">
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Learning Docker
+      Pytorch Notes
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-10-25T16:08:06&#43;01:00">
+      <time itemprop="datePublished" datetime="2020-08-16T13:27:58&#43;02:00">
         
-  October 25, 2020
+  August 16, 2020
 
       </time>
     
@@ -247,33 +246,63 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://weihengxia0123.github.io/categories/cloud">Cloud</a>
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/pytorch">PyTorch</a>
     
   
 
   </div>
 
 </div>
-    
-  </div>
-
-
-      <div id="main" data-behavior="4"
-        class="hasCover
-               hasCoverMetaIn
-               ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Basic docker usages and my notes when learning docker.</p>
-<h2 id="baic-commands">Baic commands:</h2>
-<ol>
-<li>Show containers: <code>docker container ls (options: [-a])</code> / <code>docker ps -a</code></li>
-<li>To kill a docker container: <code>docker kill [docker-container-ID]</code></li>
-<li>To remove a docker image: <code>docekr image rm [image-ID]</code></li>
-</ol>
+              <p>PyTorch notes</p>
+<h3 id="concatenate-tensor">concatenate Tensor</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">new_tensor <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cat((images_gray, images_gray, images_gray), <span style="color:#ae81ff">1</span>)
+
+<span style="color:#f92672">---------&gt;</span>  new_tensor:  torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">32</span>])
+</code></pre></div><h3 id="manual_seed-用法">manual_seed() 用法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">torch<span style="color:#f92672">.</span>manual_seed(<span style="color:#ae81ff">100</span>) 
+test <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>)
+<span style="color:#66d9ef">print</span>(test)
+</code></pre></div><p>如果seed里面的value一致，那么无论多少次rand，得到的随即数字都是一样的。也就是说，这个seed就是一个id，同样的id，随即出来的数大小，无论重复随即多少次，都是一样的。</p>
+<h3 id="torchmm和vector直接的不同">torch.mm和vector直接*的不同</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">h <span style="color:#f92672">=</span> activation(torch<span style="color:#f92672">.</span>sum(img_flat<span style="color:#f92672">*</span>W1)<span style="color:#f92672">+</span>B1)
+</code></pre></div><p>本来按上面这么写的，结果发现报错说Size不一致。我就看了看shape，对的呀？咋回事？
+原来是用了*，而不是matrix_multiplication！
+下图为正解：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">h <span style="color:#f92672">=</span> activation(torch<span style="color:#f92672">.</span>mm(img_flat,W1)<span style="color:#f92672">+</span>B1)
+</code></pre></div><h3 id="flatten-images">Flatten images</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Flatten the input images</span>
+inputs <span style="color:#f92672">=</span> images<span style="color:#f92672">.</span>view(images<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>],<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+
+img_flat <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>flatten(images, start_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><h3 id="softmax">Softmax</h3>
+<p>首先，torch.sum(xxxx, dim=1)，如果dim=0那么就会对column进行sum，如果dim=1就会对row进行sum。
+其次，shape=[64]是错误的，因为这样“because PyTorch will try to do the division across the columns”，因此我们要64张图片进行除法，就需要64行, [64,1]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">softmax</span>(x):
+    <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>exp(x)<span style="color:#f92672">/</span>torch<span style="color:#f92672">.</span>sum(torch<span style="color:#f92672">.</span>exp(x), dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>view(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</code></pre></div><h3 id="nnrelu和frelu的不同">nn.ReLU()和F.relu()的不同</h3>
+<p>参考知乎<a href="https://www.zhihu.com/question/66782101/answer/579393790">用户糖吃可好</a>的问答。</p>
+<ul>
+<li>两者的调用方式不同:
+<code>nn.Xxx</code> 需要先实例化并传入参数，然后以函数调用的方式调用实例化的对象并传入输入数据。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">inputs <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">244</span>, <span style="color:#ae81ff">244</span>)
+conv <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Conv2d(in_channels<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, out_channels<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+out <span style="color:#f92672">=</span> conv(inputs)
+</code></pre></div><p><code>nn.functional.xxx</code>需要同时传入输入数据和weight, bias等其他参数 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weight <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">64</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>)
+bias <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">64</span>) 
+out <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>functional<span style="color:#f92672">.</span>conv2d(inputs, weight, bias, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><ul>
+<li><code>nn.Xxx</code>继承于<code>nn.Module</code>， 能够很好的与<code>nn.Sequential</code>结合使用， 而<code>nn.functional.xxx</code>无法与<code>nn.Sequential</code>结合使用。</li>
+<li><code>nn.Xxx</code>不需要你自己定义和管理<code>weight</code>；而<code>nn.functional.xxx</code>需要你自己定义<code>weight</code>，每次调用的时候都需要手动传入<code>weight</code>, 不利于代码复用。</li>
+<li>上面两种定义方式得到CNN功能都是相同的，至于喜欢哪一种方式，是个人口味问题，但PyTorch官方推荐：具有学习参数的（例如，conv2d, linear, batch_norm)采用nn.Xxx方式，没有学习参数的（例如，maxpool, loss func, activation func）等根据个人选择使用nn.functional.xxx或者nn.Xxx方式。但关于dropout，个人强烈推荐使用nn.Xxx方式，因为一般情况下只有训练阶段才进行dropout，在eval阶段都不会进行dropout。使用nn.Xxx方式定义dropout，在调用model.eval()之后，model中所有的dropout layer都关闭，但以nn.function.dropout方式定义dropout，在调用model.eval()之后并不能关闭dropout。</li>
+</ul>
+<h3 id="nncrossentropyloss">nn.CrossEntropyLoss()</h3>
+<p>It combines <code>nn.LogSoftmax()</code> and <code>nn.NLLLoss()</code> together</p>
+<h3 id="nnmaxpool2d22">nn.MaxPool2d(2,2)</h3>
               
             </div>
           </div>
@@ -285,9 +314,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/cloud/">cloud</a>
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/pytorch/">PyTorch</a>
 
-  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/docker/">docker</a>
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/machine-learning/">Machine Learning</a>
 
                   </div>
                 
@@ -300,7 +329,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/" data-tooltip="Back-propagation from scratch (Python)">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/10/learning-docker/" data-tooltip="Learning Docker">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -308,7 +337,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/08/pytorch-notes/" data-tooltip="Pytorch Notes">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -326,19 +355,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -386,7 +415,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/back-propagation-from-scratch-python/" data-tooltip="Back-propagation from scratch (Python)">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/10/learning-docker/" data-tooltip="Learning Docker">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -394,7 +423,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/08/pytorch-notes/" data-tooltip="Pytorch Notes">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -412,19 +441,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/10/learning-docker/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/08/pytorch-notes/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -454,19 +483,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F10%2Flearning-docker%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F08%2Fpytorch-notes%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F10%2Flearning-docker%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F08%2Fpytorch-notes%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F10%2Flearning-docker%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F08%2Fpytorch-notes%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -558,9 +587,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/10\/learning-docker\/';
+          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/08\/pytorch-notes\/';
           
-            this.page.identifier = '\/2020\/10\/learning-docker\/'
+            this.page.identifier = '\/2020\/08\/pytorch-notes\/'
           
         };
         (function() {

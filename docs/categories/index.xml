@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 05 Dec 2020 23:28:25 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VIO</title>
+      <link>https://weihengxia0123.github.io/categories/vio/</link>
+      <pubDate>Sat, 05 Dec 2020 23:28:25 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/vio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SLAM</title>
+      <link>https://weihengxia0123.github.io/categories/slam/</link>
+      <pubDate>Thu, 03 Dec 2020 22:36:51 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/categories/slam/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>robotics</title>

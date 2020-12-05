@@ -6,10 +6,28 @@
     <description>Recent content on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Nov 2020 23:42:23 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 05 Dec 2020 23:28:25 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VIO笔记一：李群 李代数</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio%E7%AC%94%E8%AE%B0%E4%B8%80%E6%9D%8E%E7%BE%A4-%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Sat, 05 Dec 2020 23:28:25 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/12/vio%E7%AC%94%E8%AE%B0%E4%B8%80%E6%9D%8E%E7%BE%A4-%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visual Intertial Odometry</title>
+      <link>https://weihengxia0123.github.io/2020/12/visual-intertial-odometry/</link>
+      <pubDate>Thu, 03 Dec 2020 22:36:51 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/12/visual-intertial-odometry/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robotics 4 Motion Planning</title>
@@ -94,12 +112,12 @@
     </item>
     
     <item>
-      <title>Udacity Pytorch Notes</title>
-      <link>https://weihengxia0123.github.io/2020/08/udacity-pytorch-notes/</link>
+      <title>Pytorch Notes</title>
+      <link>https://weihengxia0123.github.io/2020/08/pytorch-notes/</link>
       <pubDate>Sun, 16 Aug 2020 13:27:58 +0200</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/08/udacity-pytorch-notes/</guid>
-      <description>&lt;p&gt;PyTorch notes from Udacity Deep Learning course.&lt;/p&gt;</description>
+      <guid>https://weihengxia0123.github.io/2020/08/pytorch-notes/</guid>
+      <description>&lt;p&gt;PyTorch notes&lt;/p&gt;</description>
     </item>
     
   </channel>
