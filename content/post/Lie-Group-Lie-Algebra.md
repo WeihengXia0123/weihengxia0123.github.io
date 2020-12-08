@@ -1,5 +1,5 @@
 ---
-title: "VIO笔记一：李群 李代数"
+title: "VIO Note 1: Lie Group & Lie Algebra（李群&李代数）"
 date: 2020-12-05T23:28:25+01:00
 categories:
 - VIO
@@ -16,7 +16,17 @@ keywords:
 ---
 
 <!--more-->
+{{<table_of_contents>}}
 
+## Why need Lie Group and Lie Algebra in VIO?
+
+## Definitions
+
+## Relationship: Lie Group <----> Lie Algebra (exp and log)
+
+## Application: Derivative of R and T
+
+## Summary
 引入李群和李代数，主要是因为Rotation matrix的性质 只能想乘，不能相加，相加了就不是旋转矩阵了。而要把它作为普通矩阵来处理优化，就必须对它加以约束。
 
 所以，咱们引入李群 (R, ·)，中间这个 · 是一个运算符，咱们rotation matrix的李群就是刚才说的，乘号。 然后咱们可以把李群(矩阵)用指数映射到李代数(向量)上，而这个李代数由于是向量 支持+号 所以可以咱们终于可以求导啦！
