@@ -14,7 +14,6 @@ tags:
 coverSize: full
 coverImage: img/docker.png
 
-draft: false
 ---
 
 Basic docker usages and my notes when learning docker.
@@ -24,4 +23,6 @@ Basic docker usages and my notes when learning docker.
    1. Show containers: `docker container ls (options: [-a])` / `docker ps -a`
    2. To kill a docker container: `docker kill [docker-container-ID]`
    3. To remove a docker image: `docekr image rm [image-ID]`
+
+
 
