@@ -15,7 +15,13 @@ keywords:
 #thumbnailImage: //example.com/image.jpg
 ---
 
+- Why need Lie Group and Lie Algebra in VIO? 
+- How do we use them?
+
 <!--more-->
+
+**Table of Contents**
+
 {{<table_of_contents>}}
 
 ## Why need Lie Group and Lie Algebra in VIO?

@@ -29,7 +29,10 @@ $$&lt;/p&gt;</description>
       <pubDate>Sat, 05 Dec 2020 23:28:25 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/12/vio-note-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;Why need Lie Group and Lie Algebra in VIO?&lt;/li&gt;
+&lt;li&gt;How do we use them?&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -38,7 +41,9 @@ $$&lt;/p&gt;</description>
       <pubDate>Sun, 29 Nov 2020 23:42:23 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/</guid>
-      <description>&lt;p&gt;In this blog, we are going to explore RRT (Rapidly-exploring random tree) algorihtm for motion planning.&lt;/p&gt;</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;RRT (Rapidly-exploring random tree) algorihtm for motion planning.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>

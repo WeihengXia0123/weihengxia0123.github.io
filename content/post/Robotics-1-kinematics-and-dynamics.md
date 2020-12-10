@@ -7,7 +7,9 @@ tags:
 - robotics
 keywords:
 - robotics
-thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606676704/Robotics/PUMA_bd0nms.png
+thumbnailImagePosition: bottom
+thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png
+comments: true
 ---
 
 <!--more-->
@@ -19,13 +21,13 @@ This is the first question when I heard of these 3 terms. They all frequently ap
 
 {{< hl-text warning >}}
 - Kinematics: branch of dynamics that deals with aspects of
-motion **apart from considerations of mass and force**
+motion apart from considerations of mass and force
 {{< /hl-text >}}
 .
 
 {{< hl-text warning >}}
-- Dynamics: branch of mechanics that **deals with forces** and
-their **relation primarily to the motion** but sometimes also
+- Dynamics: branch of mechanics that deals with forces and
+their relation primarily to the motion but sometimes also
 to the equilibrium of bodies
 {{< /hl-text >}}
 .

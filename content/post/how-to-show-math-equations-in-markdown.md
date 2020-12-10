@@ -2,13 +2,12 @@
 title: "Add Math Equations in Markdown with one line of code"
 date: 2020-12-09T10:12:28+01:00
 categories:
-- category
-- subcategory
+- markdown
 tags:
-- tag1
-- tag2
+- mathJax
+- markdown
 keywords:
-- tech
+- markdown
 #thumbnailImage: //example.com/image.jpg
 ---
 

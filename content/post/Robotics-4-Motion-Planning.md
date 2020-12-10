@@ -8,12 +8,15 @@ tags:
 keywords:
 - robotics
 - motion planning
-thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_400/v1606689979/Robotics/motion-planning_fwwg9u.jpg
+thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606689979/Robotics/motion-planning_fwwg9u.jpg
 ---
-In this blog, we are going to explore RRT (Rapidly-exploring random tree) algorihtm for motion planning.	
-<!--more-->
-**Table of Contents**
-{{<table_of_contents>}}
+- RRT (Rapidly-exploring random tree) algorihtm for motion planning.	
+
+  
+
+  <!--more-->
+  **Table of Contents**
+  {{<table_of_contents>}}
 
 
 ## RRT Pseudo Code
