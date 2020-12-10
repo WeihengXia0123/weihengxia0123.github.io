@@ -159,7 +159,7 @@ canonifyurls = true
   autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "https://res.cloudinary.com/dr5l034cf/image/upload/v1597569814/Tommy_xdbgpy.jpg"
+  favicon = "img/molecule-science-symbol.png"
 
   # Header configuration
   # The link at the right of the header is customizable
