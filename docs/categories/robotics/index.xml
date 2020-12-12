@@ -17,9 +17,10 @@
       <pubDate>Sun, 29 Nov 2020 23:42:23 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;RRT (Rapidly-exploring random tree) algorihtm for motion planning.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;RRT (Rapidly-exploring random tree) algorihtm for motion planning.&lt;br&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;figure&gt;&lt;img src=&#34;https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606689979/Robotics/motion-planning_fwwg9u.jpg&#34; alt=&#34;&#34;&gt;&lt;/figure&gt;
+&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +29,9 @@
       <pubDate>Sun, 29 Nov 2020 21:15:23 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/11/robotics-3-visual-servoing/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;center&gt;
+&lt;figure&gt;&lt;img src=&#34;https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606684559/Robotics/visual_servoing_robot_mh4xpx.png&#34; alt=&#34;&#34;&gt;&lt;/figure&gt;
+&lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,7 +40,9 @@
       <pubDate>Sun, 29 Nov 2020 20:15:23 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/11/robotics-2-jacobian-torque-and-control/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;center&gt;
+&lt;figure&gt;&lt;img src=&#34;https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_296/v1606679170/Robotics/jacobian_mktjnp.png&#34; alt=&#34;&#34;&gt;&lt;/figure&gt;
+&lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,7 +51,9 @@
       <pubDate>Sun, 29 Nov 2020 15:10:18 +0100</pubDate>
       
       <guid>https://weihengxia0123.github.io/2020/11/robotics-1-kinematics-and-dynamics/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;center&gt;
+&lt;figure&gt;&lt;img src=&#34;https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png&#34; alt=&#34;&#34;&gt;&lt;/figure&gt;
+&lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

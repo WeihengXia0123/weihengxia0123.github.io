@@ -7,9 +7,12 @@ tags:
 - robotics
 keywords:
 - robotics
-thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_296/v1606679170/Robotics/jacobian_mktjnp.png
+markup: mmark
+#thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_296/v1606679170/Robotics/jacobian_mktjnp.png
 ---
-
+<center>
+![](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_296/v1606679170/Robotics/jacobian_mktjnp.png)
+</center>
 <!--more-->
 {{<table_of_contents>}}
 ## What is jacobian matrix

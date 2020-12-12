@@ -7,13 +7,18 @@ tags:
 - robotics
 keywords:
 - robotics
-thumbnailImagePosition: bottom
-thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png
+#thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png
 comments: true
+markup: mmark
 ---
+<center>
+![](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png)
+</center>
 
 <!--more-->
+
 {{<table_of_contents>}}
+
 ## What is Kinematics vs Dynamics vs Machanics?
 This is the first question when I heard of these 3 terms. They all frequently appear in Robotics books and sometimes appear together.\
 \

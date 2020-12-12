@@ -8,9 +8,12 @@ tags:
 keywords:
 - robotics
 - visual servoing
-thumbnailImage: https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606684559/Robotics/visual_servoing_robot_mh4xpx.png
+markup: mmark
+#thumbnailImage: 
 ---
-
+<center>
+![](https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606684559/Robotics/visual_servoing_robot_mh4xpx.png)
+</center>
 <!--more-->
 {{<table_of_contents>}}
 

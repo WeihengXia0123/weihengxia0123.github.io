@@ -11,14 +11,15 @@ keywords:
 - VIO
 - Lie Group
 - Lie Algebra
-
+markup: mmark
 #thumbnailImage: //example.com/image.jpg
 ---
 
-- Why need Lie Group and Lie Algebra in VIO? 
-- How do we use them?
+Why need Lie Group and Lie Algebra in VIO?\
+How do we use them to compute R derivative?
 
 <!--more-->
+
 
 **Table of Contents**
 

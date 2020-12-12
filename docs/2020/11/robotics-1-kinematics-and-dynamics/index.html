@@ -8,18 +8,26 @@
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Weiheng Xia">
 <meta name="keywords" content="robotics">
-<meta name="description" content="">
+<meta name="description" content="
+
+">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="
+
+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Robotics 1 Kinematics and Dynamics">
 <meta name="twitter:title" content="Robotics 1 Kinematics and Dynamics">
 <meta property="og:url" content="https://weihengxia0123.github.io/2020/11/robotics-1-kinematics-and-dynamics/">
 <meta property="twitter:url" content="https://weihengxia0123.github.io/2020/11/robotics-1-kinematics-and-dynamics/">
 <meta property="og:site_name" content="Weiheng&#39;s Blog">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="
+
+">
+<meta name="twitter:description" content="
+
+">
 <meta property="og:locale" content="en-us">
 
   
@@ -48,9 +56,6 @@
 
 
 
-
-  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png">
-  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png">
 
 
 
@@ -254,79 +259,96 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <div class="toc">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#what-is-kinematics-vs-dynamics-vs-machanics">What is Kinematics vs Dynamics vs Machanics?</a></li>
-    <li><a href="#forward-vs-inverse-kinematics">Forward vs Inverse Kinematics</a></li>
-    <li><a href="#end-effector-pose-operational-space">End Effector Pose (operational space)</a></li>
-    <li><a href="#rotation-matrix">Rotation Matrix</a></li>
-    <li><a href="#translation-matrix">Translation Matrix</a></li>
-    <li><a href="#homogenerous-transformations-hts">Homogenerous Transformations (HTs)</a></li>
-    <li><a href="#dh-parameters">DH parameters</a></li>
-    <li><a href="#3-uses-of-hts">3 Uses of HTs</a></li>
-    <li><a href="#ht-computation">HT Computation</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+              <p><center>
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606673838/Robotics/homogeneous_transformation_junzs4.png" alt=""></figure>
+</center></p>
+
+<div class="toc">
+
 </div>
 
+
 <h2 id="what-is-kinematics-vs-dynamics-vs-machanics">What is Kinematics vs Dynamics vs Machanics?</h2>
+
 <p>This is the first question when I heard of these 3 terms. They all frequently appear in Robotics books and sometimes appear together.<br>
 <br>
-Let&rsquo;s first understand their definitions from Webster:</p>
+ Let's first understand their definitions from Webster:</p>
+
 <p><span class="highlight-text warning">
 - Kinematics: branch of dynamics that deals with aspects of
 motion apart from considerations of mass and force
 </span>
 .</p>
+
 <p><span class="highlight-text warning">
 - Dynamics: branch of mechanics that deals with forces and
 their relation primarily to the motion but sometimes also
 to the equilibrium of bodies
 </span>
 .</p>
+
 <p><span class="highlight-text warning">
 - Mechanics: branch of physical science that deals with
 energy and forces and their effect on bodies
 </span>
 .</p>
+
 <h2 id="forward-vs-inverse-kinematics">Forward vs Inverse Kinematics</h2>
+
 <div class="alert info ">
   <p><ol>
 <li>Forward: Where is the end-effector based on a given configuration?</li>
 <li>Inverse: Where do the joints have to be to place the end-effector?</li>
 </ol></p>
 </div>
+
 <h2 id="end-effector-pose-operational-space">End Effector Pose (operational space)</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_104/v1606677467/Robotics/EE_pose_y0hjns.png" alt="EE">
+
+<p><figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_104/v1606677467/Robotics/EE_pose_y0hjns.png" alt="EE"></figure>
 X is composed of position and direction</p>
+
 <h2 id="rotation-matrix">Rotation Matrix</h2>
-<p>Here&rsquo;s a derivation of the rotation matrix:
-<img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606672132/Robotics/rotation_Matrix_oure92.png" alt="Rotation Matrix"></p>
+
+<p>Here's a derivation of the rotation matrix:
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606672132/Robotics/rotation_Matrix_oure92.png" alt="Rotation Matrix"></figure></p>
+
 <h2 id="translation-matrix">Translation Matrix</h2>
+
 <p>t = (t1,t2,t3).transpose()</p>
+
 <h2 id="homogenerous-transformations-hts">Homogenerous Transformations (HTs)</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_358/v1606673838/Robotics/homogeneous_transformation_junzs4.png" alt="Homogeneous Transformation"></p>
+
+<p><figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_358/v1606673838/Robotics/homogeneous_transformation_junzs4.png" alt="Homogeneous Transformation"></figure></p>
+
 <h2 id="dh-parameters">DH parameters</h2>
+
 <p>What is DH parameters?
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/DHParameter.png/519px-DHParameter.png" alt="">
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/DHParameter.png/519px-DHParameter.png" alt=""></figure>
 DH param -&gt; Transformation
-<img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1606688863/Robotics/DH_jo2a8a.jpg" alt=""></p>
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1606688863/Robotics/DH_jo2a8a.jpg" alt=""></figure></p>
+
 <h2 id="3-uses-of-hts">3 Uses of HTs</h2>
+
 <ol>
 <li>Frame Description
-<img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675298/Robotics/HT_des_frame_io6gse.png" alt="HT_des_frame"></li>
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675298/Robotics/HT_des_frame_io6gse.png" alt="HT_des_frame"></figure></li>
 <li>Mapping between frames
-<img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675298/Robotics/HT_map_between_frames_m8g736.png" alt="HT_map"></li>
-<li>Transform a point
-<img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675394/Robotics/HT_transform_point_vsp2y2.png" alt="HT_point"></li>
-</ol>
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675298/Robotics/HT_map_between_frames_m8g736.png" alt="HT_map"></figure></li>
+
+<li><p>Transform a point
+<figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606675394/Robotics/HT_transform_point_vsp2y2.png" alt="HT_point"></figure></p>
+
 <h2 id="ht-computation">HT Computation</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_358/v1606675522/Robotics/HT_compute_rwamn0.png" alt="HT_compute"></p>
+
+<p><figure><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_358/v1606675522/Robotics/HT_compute_rwamn0.png" alt="HT_compute"></figure></p></li>
+</ol>
+
 <h2 id="conclusion">Conclusion</h2>
+
 <p>I guess some of you might be wondering: <strong>so, why do we need Kinematics?</strong></p>
+
 <p>Actualy, the reasons are covered above already:</p>
+
 <ul>
 <li>Forward: Where is the end-effector based on a given configuration?</li>
 <li>Inverse: Where do the joints have to be to place the end-effector?</li>
