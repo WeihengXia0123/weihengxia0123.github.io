@@ -7,44 +7,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Weiheng Xia">
-<meta name="keywords" content="robotics, motion planning">
-<meta name="description" content="
-RRT (Rapidly-exploring random tree) algorihtm for motion planning.
-">
+<meta name="keywords" content="VIO, IMU">
+<meta name="description" content="\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]">
 
 
-<meta property="og:description" content="
-RRT (Rapidly-exploring random tree) algorihtm for motion planning.
-">
+<meta property="og:description" content="\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Robotics 4 Motion Planning">
-<meta name="twitter:title" content="Robotics 4 Motion Planning">
-<meta property="og:url" content="https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
-<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+<meta property="og:title" content="VIO 2: IMU">
+<meta name="twitter:title" content="VIO 2: IMU">
+<meta property="og:url" content="https://weihengxia0123.github.io/2020/12/vio-2-imu/">
+<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/12/vio-2-imu/">
 <meta property="og:site_name" content="Weiheng&#39;s Blog">
-<meta property="og:description" content="
-RRT (Rapidly-exploring random tree) algorihtm for motion planning.
-">
-<meta name="twitter:description" content="
-RRT (Rapidly-exploring random tree) algorihtm for motion planning.
-">
+<meta property="og:description" content="\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]">
+<meta name="twitter:description" content="\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-11-29T23:42:23">
+    <meta property="article:published_time" content="2020-12-12T11:18:10">
   
   
-    <meta property="article:modified_time" content="2020-11-29T23:42:23">
+    <meta property="article:modified_time" content="2020-12-12T11:18:10">
   
-  
-  
-    
-      <meta property="article:section" content="robotics">
-    
   
   
     
-      <meta property="article:tag" content="robotics">
+      <meta property="article:section" content="VIO">
+    
+  
+  
+    
+      <meta property="article:tag" content="VIO">
+    
+      <meta property="article:tag" content="IMU">
     
   
 
@@ -57,9 +59,6 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
 
 
 
-  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606689979/Robotics/motion-planning_fwwg9u.jpg">
-  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_300/v1606689979/Robotics/motion-planning_fwwg9u.jpg">
-
 
 
 
@@ -68,14 +67,14 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
   <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg">
 
 
-    <title>Robotics 4 Motion Planning</title>
+    <title>VIO 2: IMU</title>
 
     <link rel="icon" href="img/molecule-science-symbol.png">
     
 
     
 
-    <link rel="canonical" href="https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+    <link rel="canonical" href="https://weihengxia0123.github.io/2020/12/vio-2-imu/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -235,15 +234,15 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Robotics 4 Motion Planning
+      VIO 2: IMU
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-11-29T23:42:23&#43;01:00">
+      <time itemprop="datePublished" datetime="2020-12-12T11:18:10&#43;01:00">
         
-  November 29, 2020
+  December 12, 2020
 
       </time>
     
@@ -252,7 +251,7 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
   
     <span>in</span>
     
-      <a class="category-link" href="https://weihengxia0123.github.io/categories/robotics">robotics</a>
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/vio">VIO</a>
     
   
 
@@ -262,30 +261,77 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <ul>
-<li>RRT (Rapidly-exploring random tree) algorihtm for motion planning.</li>
-</ul>
-<p><strong>Table of Contents</strong>
+              <p><span  class="math">\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]</span></p>
+
 <div class="toc">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#rrt-pseudo-code">RRT Pseudo Code</a></li>
-    <li><a href="#rrt-variants">RRT variants</a></li>
-    <li><a href="#rrt-with-puma-robot-simulation">RRT with PUMA robot simulation</a></li>
-    <li><a href="#result-table">Result table</a></li>
-  </ul>
-</nav>
+
 </div>
-</p>
-<h2 id="rrt-pseudo-code">RRT Pseudo Code</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_600/v1606690249/Robotics/motion-planning-pseudo_yhrbow.jpg" alt=""></p>
-<h2 id="rrt-variants">RRT variants</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_600/v1606690397/Robotics/RRT-family_zae9gs.jpg" alt=""></p>
-<h2 id="rrt-with-puma-robot-simulation">RRT with PUMA robot simulation</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606689979/Robotics/motion-planning_fwwg9u.jpg" alt=""></p>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_500/v1606690120/Robotics/motion-planning-finish_y6eosj.jpg" alt=""></p>
-<h2 id="result-table">Result table</h2>
-<p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1606690527/Robotics/motion-planning-result_re9a5b.jpg" alt=""></p>
+
+
+<h2 id="important-properties-of-rotation-matrix-and-vector">Important Properties of Rotation Matrix and Vector</h2>
+
+<p>(1) The derivative of Rotation matrix, with regard to Rotation vector <span  class="math">\( hello \)</span>   ():</p>
+
+<p><span  class="math">\[
+\begin{equation}
+\begin{aligned}
+\dot{R}_{ib} &= \frac{dR_{ib}}{dt}\\
+&= \lim_{\triangle{t}\to 0}\frac{R_{ib}exp([w^b\triangle{t}]^{\wedge})-R_{ib}}{\triangle{t}}\\
+&= \lim_{\triangle{t}\to 0}\frac{R_{ib}(I+[w^b\triangle{t}]^{\wedge})-R_{ib}}{\triangle{t}}\\
+&= \lim_{\triangle{t}\to 0}\frac{R_{ib}[w^b\triangle{t}]^{\wedge}}{\triangle{t}}\\
+&= R_{ib}[w^b]^{\wedge}\\
+\end{aligned}
+\end{equation}
+\]</span></p>
+
+<p>(2) The Skew-symmetric matrix ^ , is equal to a cross-product X:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\mathbf c=&a\times b\\
+=&
+\begin{vmatrix}
+i & j & k\\
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3
+\end{vmatrix}\\
+=&
+\begin{pmatrix}
+a_2b_3-a_3b_2\\
+-(a_1b_3-a_3b_1)\\
+a_1b_2-a_2b_1
+\end{pmatrix}\\
+=&
+\begin{pmatrix}
+0 & -a_3 & a_2\\
+a_3 & 0 & -a_1 \\
+-a_2 & a_1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+b_1 \\ b_2 \\b_3
+\end{pmatrix}
+\end{aligned}
+\]</span></p>
+
+<p><span  class="math">\[
+\begin{aligned}
+(\mathbf a\times)&=
+\begin{pmatrix}
+0 & -a_3 & a_2\\
+a_3 & 0 & -a_1 \\
+-a_2 & a_1 & 0
+\end{pmatrix}\\
+&=(\mathbf a^{\wedge})
+\end{aligned}
+\]</span></p>
+
+<p>(3) From the above properties (1) and (2), we can get</p>
+
+<p><span  class="math">\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]</span></p>
               
             </div>
           </div>
@@ -297,7 +343,9 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/robotics/">robotics</a>
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/vio/">VIO</a>
+
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/imu/">IMU</a>
 
                   </div>
                 
@@ -310,7 +358,7 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/" data-tooltip="MathJax with Hugo and markdown">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -318,7 +366,7 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/robotics-3-visual-servoing/" data-tooltip="Robotics 3 Visual Servoing">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/" data-tooltip="VIO 1: Lie Group &amp; Lie Algebra（李群&amp;李代数）">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -336,19 +384,19 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -398,7 +446,7 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/" data-tooltip="MathJax with Hugo and markdown">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -406,7 +454,7 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/11/robotics-3-visual-servoing/" data-tooltip="Robotics 3 Visual Servoing">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/" data-tooltip="VIO 1: Lie Group &amp; Lie Algebra（李群&amp;李代数）">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -424,19 +472,19 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/11/robotics-4-motion-planning/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-2-imu/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -466,19 +514,19 @@ RRT (Rapidly-exploring random tree) algorihtm for motion planning.
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Frobotics-4-motion-planning%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Frobotics-4-motion-planning%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F11%2Frobotics-4-motion-planning%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -570,9 +618,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/11\/robotics-4-motion-planning\/';
+          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/12\/vio-2-imu\/';
           
-            this.page.identifier = '\/2020\/11\/robotics-4-motion-planning\/'
+            this.page.identifier = '\/2020\/12\/vio-2-imu\/'
           
         };
         (function() {

@@ -6,17 +6,17 @@
     <description>Recent content in markdown on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:12:28 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 10:12:28 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Add Math Equations in Markdown with one line of code</title>
-      <link>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</link>
-      <pubDate>Wed, 09 Dec 2020 10:12:28 +0100</pubDate>
+      <title>MathJax with Hugo and markdown</title>
+      <link>https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/</link>
+      <pubDate>Fri, 04 Dec 2020 10:12:28 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</guid>
+      <guid>https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s actually very easy to add math equations in Markdown, using MathJax. For example:
 $$
 R = exp(\hat{\phi})

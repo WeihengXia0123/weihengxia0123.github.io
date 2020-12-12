@@ -6,33 +6,44 @@
     <description>Recent content on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:12:28 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 11:18:10 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Add Math Equations in Markdown with one line of code</title>
-      <link>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</link>
-      <pubDate>Wed, 09 Dec 2020 10:12:28 +0100</pubDate>
+      <title>VIO 2: IMU</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-2-imu/</link>
+      <pubDate>Sat, 12 Dec 2020 11:18:10 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s actually very easy to add math equations in Markdown, using MathJax. For example:
-$$
-R = exp(\hat{\phi})
-$$&lt;/p&gt;</description>
+      <guid>https://weihengxia0123.github.io/2020/12/vio-2-imu/</guid>
+      <description>&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
+\]&lt;/span&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>VIO Note 1: Lie Group &amp; Lie Algebra（李群&amp;李代数）</title>
-      <link>https://weihengxia0123.github.io/2020/12/vio-note-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
+      <title>VIO 1: Lie Group &amp; Lie Algebra（李群&amp;李代数）</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
       <pubDate>Sat, 05 Dec 2020 23:28:25 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/vio-note-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
+      <guid>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Why need Lie Group and Lie Algebra in VIO?&lt;/li&gt;
 &lt;li&gt;How do we use them?&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>MathJax with Hugo and markdown</title>
+      <link>https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/</link>
+      <pubDate>Fri, 04 Dec 2020 10:12:28 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s actually very easy to add math equations in Markdown, using MathJax. For example:
+$$
+R = exp(\hat{\phi})
+$$&lt;/p&gt;</description>
     </item>
     
     <item>
