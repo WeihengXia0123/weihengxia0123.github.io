@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Linux Sed</title>
-      <link>https://weihengxia0123.github.io/2020/11/linux-sed/</link>
+      <title>Bash: Replace text, call script from python</title>
+      <link>https://weihengxia0123.github.io/2020/11/bash-replace-text-call-script-from-python/</link>
       <pubDate>Sun, 22 Nov 2020 23:54:54 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/11/linux-sed/</guid>
+      <guid>https://weihengxia0123.github.io/2020/11/bash-replace-text-call-script-from-python/</guid>
       <description>&lt;p&gt;Basic linux sed commands to search, replace, and add strings in files.&lt;/p&gt;</description>
     </item>
     

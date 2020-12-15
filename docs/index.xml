@@ -23,16 +23,6 @@
     </item>
     
     <item>
-      <title>VIO 1: Lie Group &amp; Lie Algebra（李群&amp;李代数）</title>
-      <link>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
-      <pubDate>Sat, 05 Dec 2020 23:28:25 +0100</pubDate>
-      
-      <guid>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
-      <description>&lt;p&gt;Why need Lie Group and Lie Algebra in VIO?&lt;br&gt;
-How do we use them to compute R derivative?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>MathJax with Hugo and markdown</title>
       <link>https://weihengxia0123.github.io/2020/12/mathjax-with-hugo-and-markdown/</link>
       <pubDate>Fri, 04 Dec 2020 10:12:28 +0100</pubDate>
@@ -42,6 +32,16 @@ How do we use them to compute R derivative?&lt;/p&gt;</description>
 $$
 R = exp(\hat{\phi})
 $$&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VIO 1: Lie Group &amp; Lie Algebra（李群李代数）</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Tue, 01 Dec 2020 23:28:25 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
+      <description>&lt;p&gt;Why need Lie Group and Lie Algebra in VIO?&lt;br&gt;
+How do we use them to compute R derivative?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,11 +109,11 @@ $$&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Linux Sed</title>
-      <link>https://weihengxia0123.github.io/2020/11/linux-sed/</link>
+      <title>Bash: Replace text, call script from python</title>
+      <link>https://weihengxia0123.github.io/2020/11/bash-replace-text-call-script-from-python/</link>
       <pubDate>Sun, 22 Nov 2020 23:54:54 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/11/linux-sed/</guid>
+      <guid>https://weihengxia0123.github.io/2020/11/bash-replace-text-call-script-from-python/</guid>
       <description>&lt;p&gt;Basic linux sed commands to search, replace, and add strings in files.&lt;/p&gt;</description>
     </item>
     

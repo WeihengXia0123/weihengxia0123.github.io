@@ -1,6 +1,6 @@
 ---
-title: "VIO 1: Lie Group & Lie Algebra（李群&李代数）"
-date: 2020-12-05T23:28:25+01:00
+title: "VIO 1: Lie Group & Lie Algebra（李群李代数）"
+date: 2020-12-01T23:28:25+01:00
 categories:
 - VIO
 tags:
