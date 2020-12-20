@@ -1,6 +1,6 @@
 ---
 title: "MathJax with Hugo and markdown"
-date: 2020-12-04T10:12:28+01:00
+date: 2020-11-30T10:12:28+01:00
 categories:
 - markdown
 tags:

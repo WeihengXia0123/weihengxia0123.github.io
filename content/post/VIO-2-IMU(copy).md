@@ -1,5 +1,5 @@
 ---
-title: "VIO 2: IMU"
+title: "VIO 2: IMU Calibration"
 date: 2020-12-12T11:18:10+01:00
 categories:
 - VIO
@@ -84,3 +84,19 @@ $$
 $$
 \dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
 $$
+
+## IMU Allen Calibration
+### Step1: Install imu_utils and code_utils
+Generally, please refer to this [blog](https://blog.csdn.net/cuifeng1993/article/details/107420874) for instructions.\
+However, as I'm using:
+- Ubuntu 20.04
+- Python 3.8
+- ROS noetic
+
+I encountered with several problems, and here's some additional steps to solve them:\
+\
+(1) Change code_utils/src/sumpixel_test.cpp : #include "backward.hpp" -> #include “code_utils/backward.hpp”\
+(2) Change code_utils/CMakeLists.txt: set(CMAKE_CXX_FLAGS "-std=c++14")
+### Step2: 
+
+
