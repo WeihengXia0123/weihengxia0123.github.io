@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>VIO 2: IMU</title>
-      <link>https://weihengxia0123.github.io/2020/12/vio-2-imu/</link>
+      <title>VIO 2: IMU Calibration</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/</link>
       <pubDate>Sat, 12 Dec 2020 11:18:10 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/vio-2-imu/</guid>
+      <guid>https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/</guid>
       <description>&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
 \]&lt;/span&gt;&lt;/p&gt;</description>
