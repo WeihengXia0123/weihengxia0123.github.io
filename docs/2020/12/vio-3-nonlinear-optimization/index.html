@@ -7,46 +7,92 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Weiheng Xia">
-<meta name="keywords" content="VIO, IMU">
-<meta name="description" content="\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]">
+<meta name="keywords" content="tech">
+<meta name="description" content="
+F(x)
+
+Gradient Descent
+Newton Method
 
 
-<meta property="og:description" content="\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]">
+f(x)
+
+Gaussian-Newton Method
+Levenberg-Marquardt(LM) Method
+
+
+">
+
+
+<meta property="og:description" content="
+F(x)
+
+Gradient Descent
+Newton Method
+
+
+f(x)
+
+Gaussian-Newton Method
+Levenberg-Marquardt(LM) Method
+
+
+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIO 2: IMU Calibration">
-<meta name="twitter:title" content="VIO 2: IMU Calibration">
-<meta property="og:url" content="https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
-<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+<meta property="og:title" content="VIO 3 NonLinear Optimization">
+<meta name="twitter:title" content="VIO 3 NonLinear Optimization">
+<meta property="og:url" content="https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
+<meta property="twitter:url" content="https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
 <meta property="og:site_name" content="Weiheng&#39;s Blog">
-<meta property="og:description" content="\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]">
-<meta name="twitter:description" content="\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]">
+<meta property="og:description" content="
+F(x)
+
+Gradient Descent
+Newton Method
+
+
+f(x)
+
+Gaussian-Newton Method
+Levenberg-Marquardt(LM) Method
+
+
+">
+<meta name="twitter:description" content="
+F(x)
+
+Gradient Descent
+Newton Method
+
+
+f(x)
+
+Gaussian-Newton Method
+Levenberg-Marquardt(LM) Method
+
+
+">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-12-12T11:18:10">
+    <meta property="article:published_time" content="2020-12-29T09:43:10">
   
   
-    <meta property="article:modified_time" content="2020-12-12T11:18:10">
+    <meta property="article:modified_time" content="2020-12-29T09:43:10">
   
-  
-  
-    
-      <meta property="article:section" content="VIO">
-    
   
   
     
-      <meta property="article:tag" content="VIO">
+      <meta property="article:section" content="category">
     
-      <meta property="article:tag" content="IMU">
+      <meta property="article:section" content="subcategory">
+    
+  
+  
+    
+      <meta property="article:tag" content="tag1">
+    
+      <meta property="article:tag" content="tag2">
     
   
 
@@ -67,14 +113,14 @@
   <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg">
 
 
-    <title>VIO 2: IMU Calibration</title>
+    <title>VIO 3 NonLinear Optimization</title>
 
     <link rel="icon" href="img/molecule-science-symbol.png">
     
 
     
 
-    <link rel="canonical" href="https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+    <link rel="canonical" href="https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -234,15 +280,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      VIO 2: IMU Calibration
+      VIO 3 NonLinear Optimization
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-12-12T11:18:10&#43;01:00">
+      <time itemprop="datePublished" datetime="2020-12-29T09:43:10&#43;01:00">
         
-  December 12, 2020
+  December 29, 2020
 
       </time>
     
@@ -251,7 +297,9 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://weihengxia0123.github.io/categories/vio">VIO</a>
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/category">category</a>, 
+    
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/subcategory">subcategory</a>
     
   
 
@@ -261,97 +309,30 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><span  class="math">\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]</span></p>
-
-<div class="toc">
-
-</div>
-
-
-<h2 id="important-properties-of-rotation-matrix-and-vector">Important Properties of Rotation Matrix and Vector</h2>
-
-<p>(1) The derivative of Rotation matrix, with regard to Rotation vector <span  class="math">\( hello \)</span>   ():</p>
-
-<p><span  class="math">\[
-\begin{equation}
-\begin{aligned}
-\dot{R}_{ib} &= \frac{dR_{ib}}{dt}\\
-&= \lim_{\triangle{t}\to 0}\frac{R_{ib}exp([w^b\triangle{t}]^{\wedge})-R_{ib}}{\triangle{t}}\\
-&= \lim_{\triangle{t}\to 0}\frac{R_{ib}(I+[w^b\triangle{t}]^{\wedge})-R_{ib}}{\triangle{t}}\\
-&= \lim_{\triangle{t}\to 0}\frac{R_{ib}[w^b\triangle{t}]^{\wedge}}{\triangle{t}}\\
-&= R_{ib}[w^b]^{\wedge}\\
-\end{aligned}
-\end{equation}
-\]</span></p>
-
-<p>(2) The Skew-symmetric matrix ^ , is equal to a cross-product X:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\mathbf c=&a\times b\\
-=&
-\begin{vmatrix}
-i & j & k\\
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3
-\end{vmatrix}\\
-=&
-\begin{pmatrix}
-a_2b_3-a_3b_2\\
--(a_1b_3-a_3b_1)\\
-a_1b_2-a_2b_1
-\end{pmatrix}\\
-=&
-\begin{pmatrix}
-0 & -a_3 & a_2\\
-a_3 & 0 & -a_1 \\
--a_2 & a_1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-b_1 \\ b_2 \\b_3
-\end{pmatrix}
-\end{aligned}
-\]</span></p>
-
-<p><span  class="math">\[
-\begin{aligned}
-(\mathbf a\times)&=
-\begin{pmatrix}
-0 & -a_3 & a_2\\
-a_3 & 0 & -a_1 \\
--a_2 & a_1 & 0
-\end{pmatrix}\\
-&=(\mathbf a^{\wedge})
-\end{aligned}
-\]</span></p>
-
-<p>(3) From the above properties (1) and (2), we can get</p>
-
-<p><span  class="math">\[
-\dot{R}_{ib} = R_{ib}[w^b]^{\wedge} = R_{ib}[w^b]\times
-\]</span></p>
-
-<h2 id="imu-allen-calibration">IMU Allen Calibration</h2>
-
-<h3 id="step1-install-imuutils-and-codeutils">Step1: Install imu_utils and code_utils</h3>
-
-<p>Generally, please refer to this <a href="https://blog.csdn.net/cuifeng1993/article/details/107420874">blog</a> for instructions.<br>
-However, as I'm using:</p>
-
+              <ul>
+<li>F(x)
 <ul>
-<li>Ubuntu 20.04</li>
-<li>Python 3.8</li>
-<li>ROS noetic</li>
+<li>Gradient Descent</li>
+<li>Newton Method</li>
 </ul>
-
-<p>I encountered with several problems, and here's some additional steps to solve them:<br>
-<br>
-(1) Change code_utils/src/sumpixel_test.cpp : #include &quot;backward.hpp&quot; -&gt; #include “code_utils/backward.hpp”<br>
-(2) Change code_utils/CMakeLists.txt: set(CMAKE_CXX_FLAGS &quot;-std=c++14&quot;)</p>
-
-<h3 id="step2">Step2:</h3>
+</li>
+<li>f(x)
+<ul>
+<li>Gaussian-Newton Method</li>
+<li>Levenberg-Marquardt(LM) Method</li>
+</ul>
+</li>
+</ul>
+<h2 id="gradient-descent-vs-newton">Gradient Descent vs Newton</h2>
+<p>//todo</p>
+<h2 id="gauss-newton--lm">Gauss-Newton + LM</h2>
+<p>//todo</p>
+<h2 id="robust-kernel">Robust Kernel</h2>
+<p>//todo</p>
+<p>Reference:<br>
+[1] <a href="https://zhuanlan.zhihu.com/p/113946848">最小二乘问题的四种解法——牛顿法，梯度下降法，高斯牛顿法和列文伯格-马夸特法的区别和联系</a>
+[2] <a href="https://blog.csdn.net/OORRANNGGE/article/details/90696602?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai">梯度下降、牛顿法、高斯牛顿&amp;L-M算法比较</a>
+[3] <a href="https://kangcai.github.io/2018/12/17/ml-overall-9-algorithm-QNM/">机器学习 · 总览篇 IX · 三要素之算法 - 牛顿法与拟牛顿法</a></p>
               
             </div>
           </div>
@@ -363,9 +344,9 @@ However, as I'm using:</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/vio/">VIO</a>
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/tag1/">tag1</a>
 
-  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/imu/">IMU</a>
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/tag2/">tag2</a>
 
                   </div>
                 
@@ -378,7 +359,7 @@ However, as I'm using:</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/" data-tooltip="VIO 3 NonLinear Optimization">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -386,7 +367,7 @@ However, as I'm using:</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/" data-tooltip="VIO 1: Lie Group &amp; Lie Algebra（李群李代数）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/" data-tooltip="VIO 2: IMU Calibration">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -404,19 +385,19 @@ However, as I'm using:</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -466,7 +447,7 @@ However, as I'm using:</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/" data-tooltip="VIO 3 NonLinear Optimization">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -474,7 +455,7 @@ However, as I'm using:</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-1-lie-group-lie-algebra%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/" data-tooltip="VIO 1: Lie Group &amp; Lie Algebra（李群李代数）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/" data-tooltip="VIO 2: IMU Calibration">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -492,19 +473,19 @@ However, as I'm using:</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-2-imu-calibration/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -534,19 +515,19 @@ However, as I'm using:</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu-calibration%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-3-nonlinear-optimization%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu-calibration%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-3-nonlinear-optimization%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-2-imu-calibration%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2020%2F12%2Fvio-3-nonlinear-optimization%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -638,9 +619,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/12\/vio-2-imu-calibration\/';
+          this.page.url = 'https:\/\/weihengxia0123.github.io\/2020\/12\/vio-3-nonlinear-optimization\/';
           
-            this.page.identifier = '\/2020\/12\/vio-2-imu-calibration\/'
+            this.page.identifier = '\/2020\/12\/vio-3-nonlinear-optimization\/'
           
         };
         (function() {

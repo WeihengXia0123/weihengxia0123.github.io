@@ -6,21 +6,31 @@
     <description>Recent content in subcategory on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:12:28 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 29 Dec 2020 09:43:10 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/categories/subcategory/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Add Math Equations in Markdown with one line of code</title>
-      <link>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</link>
-      <pubDate>Wed, 09 Dec 2020 10:12:28 +0100</pubDate>
+      <title>VIO 3 NonLinear Optimization</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</link>
+      <pubDate>Tue, 29 Dec 2020 09:43:10 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/add-math-equations-in-markdown-with-one-line-of-code/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s actually very easy to add math equations in Markdown, using MathJax. For example:
-$$
-R = exp(\hat{\phi})
-$$&lt;/p&gt;</description>
+      <guid>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;F(x)
+&lt;ul&gt;
+&lt;li&gt;Gradient Descent&lt;/li&gt;
+&lt;li&gt;Newton Method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;f(x)
+&lt;ul&gt;
+&lt;li&gt;Gaussian-Newton Method&lt;/li&gt;
+&lt;li&gt;Levenberg-Marquardt(LM) Method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
