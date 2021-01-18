@@ -6,10 +6,41 @@
     <description>Recent content in VIO on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Dec 2020 11:18:10 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jan 2021 00:49:33 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/categories/vio/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VIO 6 Front-End</title>
+      <link>https://weihengxia0123.github.io/2021/01/vio-6-front-end/</link>
+      <pubDate>Sun, 17 Jan 2021 00:49:33 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2021/01/vio-6-front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VIO 3 NonLinear Optimization</title>
+      <link>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</link>
+      <pubDate>Tue, 29 Dec 2020 09:43:10 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;F(x)
+
+&lt;ul&gt;
+&lt;li&gt;Gradient Descent&lt;/li&gt;
+&lt;li&gt;Newton Method&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;f(x)
+
+&lt;ul&gt;
+&lt;li&gt;Gaussian-Newton Method&lt;/li&gt;
+&lt;li&gt;Levenberg-Marquardt(LM) Method&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>VIO 2: IMU Calibration</title>

@@ -6,31 +6,27 @@
     <description>Recent content in category on Weiheng&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Dec 2020 09:43:10 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:49:33 +0100</lastBuildDate>
     
 	<atom:link href="https://weihengxia0123.github.io/categories/category/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>VIO 3 NonLinear Optimization</title>
-      <link>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</link>
-      <pubDate>Tue, 29 Dec 2020 09:43:10 +0100</pubDate>
+      <title>VIO 5 Bundle Adjustment Solver</title>
+      <link>https://weihengxia0123.github.io/2021/01/vio-5-bundle-adjustment-solver/</link>
+      <pubDate>Mon, 11 Jan 2021 00:49:33 +0100</pubDate>
       
-      <guid>https://weihengxia0123.github.io/2020/12/vio-3-nonlinear-optimization/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;F(x)
-&lt;ul&gt;
-&lt;li&gt;Gradient Descent&lt;/li&gt;
-&lt;li&gt;Newton Method&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;f(x)
-&lt;ul&gt;
-&lt;li&gt;Gaussian-Newton Method&lt;/li&gt;
-&lt;li&gt;Levenberg-Marquardt(LM) Method&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>https://weihengxia0123.github.io/2021/01/vio-5-bundle-adjustment-solver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VIO 4 Sliding Window</title>
+      <link>https://weihengxia0123.github.io/2021/01/vio-4-sliding-window/</link>
+      <pubDate>Mon, 11 Jan 2021 00:48:55 +0100</pubDate>
+      
+      <guid>https://weihengxia0123.github.io/2021/01/vio-4-sliding-window/</guid>
+      <description></description>
     </item>
     
   </channel>

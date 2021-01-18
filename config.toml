@@ -158,6 +158,8 @@ canonifyurls = true
   # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
   autoThumbnailImage = true
 
+  metaAlignment = "center"
+
   # Your favicon path, default is "/favicon.png"
   favicon = "img/molecule-science-symbol.png"
 

@@ -2,13 +2,14 @@
 title: "VIO 3 NonLinear Optimization"
 date: 2020-12-29T09:43:10+01:00
 categories:
-- category
-- subcategory
+- VIO
 tags:
-- tag1
-- tag2
+- VIO
+- IMU
 keywords:
-- tech
+- VIO
+- IMU
+markup: mmark
 #thumbnailImage: //example.com/image.jpg
 ---
 - F(x)

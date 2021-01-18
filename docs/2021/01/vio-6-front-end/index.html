@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Weiheng Xia">
+<meta name="keywords" content="VIO, IMU">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VIO 6 Front-End">
+<meta name="twitter:title" content="VIO 6 Front-End">
+<meta property="og:url" content="https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+<meta property="twitter:url" content="https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+<meta property="og:site_name" content="Weiheng&#39;s Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-01-17T00:49:33">
+  
+  
+    <meta property="article:modified_time" content="2021-01-17T00:49:33">
+  
+  
+  
+    
+      <meta property="article:section" content="VIO">
+    
+  
+  
+    
+      <meta property="article:tag" content="VIO">
+    
+      <meta property="article:tag" content="IMU">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_504/v1610983482/VIO/VIO-6-front-end_gakgfa.png">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/c_scale,w_504/v1610983482/VIO/VIO-6-front-end_gakgfa.png">
+
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg">
+
+
+    <title>VIO 6 Front-End</title>
+
+    <link rel="icon" href="img/molecule-science-symbol.png">
+    
+
+    
+
+    <link rel="canonical" href="https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://weihengxia0123.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://weihengxia0123.github.io/">Weiheng&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://weihengxia0123.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://weihengxia0123.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Weiheng Xia</h4>
+        
+          <h5 class="sidebar-profile-bio">AI &amp; Cloud | Robotics</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/weihengxia0123" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/weihengxia/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">Linkedin</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weihengxia0123.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      VIO 6 Front-End
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-01-17T00:49:33&#43;01:00">
+        
+  January 17, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://weihengxia0123.github.io/categories/vio">VIO</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p><img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1610983986/VIO/VIO-6-Homework_tzwi80.png" alt=""></p>
+<p>一. 基础题</p>
+<ol>
+<li>
+<p>证明题 (Proof of y=u4)
+<img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1610985699/VIO/VIO%E4%BD%9C%E4%B8%9A6_1_dg0ob0.jpg" alt="证明"></p>
+</li>
+<li>
+<p>Triangulation (Code)</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">   <span style="color:#75715e">/// TODO::homework; 请完成三角化估计深度的代码
+</span><span style="color:#75715e"></span>   <span style="color:#75715e">// 遍历所有的观测数据，并三角化
+</span><span style="color:#75715e"></span>   Eigen<span style="color:#f92672">::</span>Vector3d P_est;           <span style="color:#75715e">// 结果保存到这个变量
+</span><span style="color:#75715e"></span>   P_est.setZero();
+   <span style="color:#75715e">/* your code begin */</span>
+   <span style="color:#66d9ef">int</span> num_row <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>(end_frame_id <span style="color:#f92672">-</span> start_frame_id);
+ 
+   Eigen<span style="color:#f92672">::</span>MatrixXd D(Eigen<span style="color:#f92672">::</span>MatrixXd<span style="color:#f92672">::</span>Zero(num_row, <span style="color:#ae81ff">4</span>));
+   Eigen<span style="color:#f92672">::</span>Matrix<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span> Pk;
+   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> start_frame_id; k <span style="color:#f92672">&lt;</span> end_frame_id; k<span style="color:#f92672">++</span>){
+       <span style="color:#75715e">// Pk.setZero();
+</span><span style="color:#75715e"></span>       Pk.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>) <span style="color:#f92672">=</span> camera_pose[k].Rwc.transpose();
+       Pk.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>) <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> camera_pose[k].Rwc.transpose() <span style="color:#f92672">*</span> camera_pose[k].twc;
+ 
+       Eigen<span style="color:#f92672">::</span>Matrix<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span> Pk1 <span style="color:#f92672">=</span> Pk.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
+       Eigen<span style="color:#f92672">::</span>Matrix<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span> Pk2 <span style="color:#f92672">=</span> Pk.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>);
+       Eigen<span style="color:#f92672">::</span>Matrix<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span> Pk3 <span style="color:#f92672">=</span> Pk.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>);
+ 
+       D.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span>((k<span style="color:#f92672">-</span>start_frame_id)<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">=</span> camera_pose[k].uv.x()<span style="color:#f92672">*</span>Pk3 <span style="color:#f92672">-</span> Pk1;
+       D.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">&gt;</span>((k<span style="color:#f92672">-</span>start_frame_id)<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">=</span> camera_pose[k].uv.y()<span style="color:#f92672">*</span>Pk3 <span style="color:#f92672">-</span> Pk2;
+   }
+ 
+   Eigen<span style="color:#f92672">::</span>JacobiSVD<span style="color:#f92672">&lt;</span>Eigen<span style="color:#f92672">::</span>MatrixXd<span style="color:#f92672">&gt;</span> svd(D.transpose() <span style="color:#f92672">*</span> D, Eigen<span style="color:#f92672">::</span>ComputeThinU <span style="color:#f92672">|</span> Eigen<span style="color:#f92672">::</span>ComputeThinV);
+  
+   Eigen<span style="color:#f92672">::</span>MatrixXd U <span style="color:#f92672">=</span> svd.matrixU();
+   Eigen<span style="color:#f92672">::</span>MatrixXd V <span style="color:#f92672">=</span> svd.matrixV();
+   Eigen<span style="color:#f92672">::</span>MatrixXd A <span style="color:#f92672">=</span> svd.singularValues();
+ 
+   std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;U: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;&lt;</span> U <span style="color:#f92672">&lt;&lt;</span>std<span style="color:#f92672">::</span>endl;
+   std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;V: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;&lt;</span> V <span style="color:#f92672">&lt;&lt;</span>std<span style="color:#f92672">::</span>endl;
+   std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;A: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;&lt;</span> A <span style="color:#f92672">&lt;&lt;</span>std<span style="color:#f92672">::</span>endl;
+ 
+   <span style="color:#75715e">// 归一化为 [x,y,z,1]
+</span><span style="color:#75715e"></span>   P_est <span style="color:#f92672">=</span> V.block<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>) <span style="color:#f92672">/</span> V(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>);
+   <span style="color:#75715e">/* your code end */</span>
+
+</code></pre></div><p>二. 提升题<br>
+3. Add different normal noises to camera measurements, and observe the change of the ratio between sigma4 and sigma3.<br>
+关键代码如下:</p>
+<ul>
+<li>Generate norm_noise variances</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> noise_variances;
+   std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> sigma_3;
+   std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span><span style="color:#f92672">&gt;</span> sigma_4;
+   <span style="color:#66d9ef">float</span> variance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>;
+   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">20</span>; k<span style="color:#f92672">++</span>){
+       noise_variances.push_back(variance);
+       variance <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.001</span>;
+   }
+</code></pre></div><ul>
+<li>Add noise to observations</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">   <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>; k<span style="color:#f92672">++</span>){
+       std<span style="color:#f92672">::</span>normal_distribution<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> noise_gaussian(<span style="color:#ae81ff">0.</span>, noise_variances[k]); <span style="color:#75715e">// Create normal distribution as noises
+</span><span style="color:#75715e"></span>       <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> start_frame_id; i <span style="color:#f92672">&lt;</span> end_frame_id; <span style="color:#f92672">++</span>i) {
+           Eigen<span style="color:#f92672">::</span>Matrix3d Rcw <span style="color:#f92672">=</span> camera_pose[i].Rwc.transpose();
+           Eigen<span style="color:#f92672">::</span>Vector3d Pc <span style="color:#f92672">=</span> Rcw <span style="color:#f92672">*</span> (Pw <span style="color:#f92672">-</span> camera_pose[i].twc);
+ 
+           <span style="color:#66d9ef">double</span> x <span style="color:#f92672">=</span> Pc.x();
+           <span style="color:#66d9ef">double</span> y <span style="color:#f92672">=</span> Pc.y();
+           <span style="color:#66d9ef">double</span> z <span style="color:#f92672">=</span> Pc.z();
+ 
+           x <span style="color:#f92672">+=</span> noise_gaussian(generator);
+           y <span style="color:#f92672">+=</span> noise_gaussian(generator);
+           z <span style="color:#f92672">+=</span> noise_gaussian(generator);
+ 
+           camera_pose[i].uv <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>Vector2d(x<span style="color:#f92672">/</span>z,y<span style="color:#f92672">/</span>z);
+       }
+
+</code></pre></div><ul>
+<li>Save sigma 3/4</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    sigma_3.push_back(A(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>));
+    sigma_4.push_back(A(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">0</span>));
+</code></pre></div><ul>
+<li>Plot the ratio
+<img src="https://res.cloudinary.com/dr5l034cf/image/upload/v1610987831/VIO/noise_figure_gvalv4.png" alt=""></li>
+</ul>
+<ol start="4">
+<li>Plot the ratio of sigma4/sigma3, but this time fix the noise, while increasing the number of frames observed.
+
+
+
+<div class="center">
+  <img
+    src="https://res.cloudinary.com/dr5l034cf/image/upload/v1610987830/VIO/frame_figure_yostcr.png"
+    alt="frame figure plot"
+    decoding="async"
+  />
+</div></li>
+</ol>
+<p>坑点总结：<br>
+[1] u4是一个1x4的向量<br>
+[2] y分别是[x,y,z,1],而u4没有归一化,所以y还有在u4做一个归一化才能得到。<br>
+[3] D*y = 0\</p>
+<p>Reference:<br>
+[1] <a href="https://blog.csdn.net/remanented/article/details/103452070">SLAM中部分小知识点的记录</a><br>
+[2] <a href="https://zhuanlan.zhihu.com/p/44114447">MIT线性代数Ax=b总结</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/vio/">VIO</a>
+
+  <a class="tag tag--primary tag--small" href="https://weihengxia0123.github.io/tags/imu/">IMU</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2021/01/vio-5-bundle-adjustment-solver/" data-tooltip="VIO 5 Bundle Adjustment Solver">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Weiheng Xia. All Rights Reserved
+  </span>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://weihengxia0123.github.io/2021/01/vio-5-bundle-adjustment-solver/" data-tooltip="VIO 5 Bundle Adjustment Solver">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://weihengxia0123.github.io/2021/01/vio-6-front-end/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fweihengxia0123.github.io%2F2021%2F01%2Fvio-6-front-end%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fweihengxia0123.github.io%2F2021%2F01%2Fvio-6-front-end%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fweihengxia0123.github.io%2F2021%2F01%2Fvio-6-front-end%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://res.cloudinary.com/dr5l034cf/image/upload/v1604962695/profile-2_copy_ctkt5d.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Weiheng Xia</h4>
+    
+      <div id="about-card-bio">AI &amp; Cloud | Robotics</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Master Student at TU Berlin and EURECOM
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Antibes, France
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://weihengxia0123.github.io/img/plane_sky.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://weihengxia0123.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/weihengxia0123.github.io\/2021\/01\/vio-6-front-end\/';
+          
+            this.page.identifier = '\/2021\/01\/vio-6-front-end\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Weiheng Blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
